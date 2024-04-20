@@ -33,8 +33,10 @@ const playBrainGcd = () => {
             return;
         }
     }
-    return playBrainGcd;
+    console.log(`Congratulations, ${name}!`);
 };
+
+playBrainGcd();
 
 export default playBrainGcd;
 
