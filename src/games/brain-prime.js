@@ -1,4 +1,7 @@
 import readlineSync from 'readline-sync';
+import greetUser from '../cli.js';
+
+greetUser();
 
 const isPrime = (num) => {
     if (num <= 1) return false;
@@ -16,9 +19,7 @@ const isPrime = (num) => {
 };
 
 const playBrainPrime = () => {
-    console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${name}!`);
+
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
     let correctAnswerCount = 0;

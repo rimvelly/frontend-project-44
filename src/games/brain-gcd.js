@@ -1,4 +1,7 @@
 import readlineSync from 'readline-sync';
+import greetUser from '../cli.js';
+
+greetUser();
 
 const gcd = (num1, num2) => {
     if (num2 === 0) {
@@ -9,9 +12,6 @@ const gcd = (num1, num2) => {
 
 const playBrainGcd = () => {
 
-    console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${name}!`);
     console.log('Find the greatest common divisor of given numbers.');
 
     let correctAnswerCount = 0;

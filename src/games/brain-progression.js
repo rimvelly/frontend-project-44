@@ -1,4 +1,7 @@
 import readlineSync from 'readline-sync';
+import greetUser from '../cli.js';
+
+greetUser();
 
 const generateProgression = () => {
     const firstNum = Math.floor(Math.random()*(30 - 1) + 1);
@@ -21,9 +24,7 @@ const generateProgression = () => {
 
 
 const playBrainProgression = () => {
-    console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${name}!`);
+    
     console.log('What number is missing in the progression?');
 
     let correctAnswerCount = 0;
