@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import greetUser from '../cli.js';
+import greetUser, { questionAndAnswer } from '../cli.js';
+import { questionAndAnswer } from '../cli.js';
 
 greetUser();
+questionAndAnswer();
