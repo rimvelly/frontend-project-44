@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 import greetUser from '../cli.js';
 import questionAndAnswer from '../cli.js';
 
-greetUser();
 
 export const playBrainCalc = () => { 
     console.log('What is the result of the expression?');
@@ -26,7 +25,5 @@ export const calculate = (num1, operator, num2) =>
     NaN;
 
 playBrainCalc();
-generateQuestion();
-questionAndAnswer();
 
 export default playBrainCalc;
