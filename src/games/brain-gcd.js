@@ -1,42 +1,30 @@
-import readlineSync from 'readline-sync';
-import greetUser from '../cli.js';
+import questionAndAnswer from '../index.js';
+const descriptions = 'Find the greatest common divisor of given numbers.';
 
-greetUser();
 
 const gcd = (num1, num2) => {
-    if (num2 === 0) {
-        return num1; 
-    }
-    return gcd (num2, num1 % num2);
-};
-
-const playBrainGcd = () => {
-
-    console.log('Find the greatest common divisor of given numbers.');
-
-    let correctAnswerCount = 0;
-
-    for (let i = 0; i < 3; i += 1) {
-        const num1 = Math.floor(Math.random()*(100 - 1) + 1);
-        const num2 = Math.floor(Math.random()*(100 - 1) + 1);
-        console.log(`Question: ${num1} ${num2}`);
-
-        const userAnswer = readlineSync.question ('Your answer: ');
-        const correctAnswer = gcd(num1, num2).toString();
-
-        if (userAnswer === correctAnswer) {
-            console.log('Congrats!');
-            correctAnswerCount += 1;
+    while (num1 !== num2) {
+        if (num1 > num2) {
+            num1 = num1 - num2;
         } else {
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-            console.log(`Let's try again, ${name}!`);
-            return;
+            num2 = num2 - num1;
         }
     }
-    console.log(`Congratulations, ${name}!`);
+
+    return num1;
 };
 
-playBrainGcd();
 
-export default playBrainGcd;
+const playBrainGcd = () => {
+        const num1 = Math.floor(Math.random()*(10 - 1) + 1);
+        const num2 = Math.floor(Math.random()*(10 - 1) + 1);
+        // console.log(`Question: ${num1} ${num2}`);
+        let correctAnswer = '';
+        const question = `${num1} ${num2}`;
+        correctAnswer += gcd(num1, num2);
+        return [question, correctAnswer];
+    
+       // const correctAnswer = gcd(num1, num2).toString();
+};
 
+export default () => { questionAndAnswer(descriptions, playBrainGcd); };

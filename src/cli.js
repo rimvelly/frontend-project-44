@@ -1,3 +1,12 @@
+import readlindeSync from 'readline-sync';
+
+export default () => {
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
+
+/*
 import readlineSync from 'readline-sync';
 import { generateQuestion } from './games/brain-calc.js';
 
@@ -29,3 +38,4 @@ return questionAndAnswer;
 };
 
 export default greetUser(); questionAndAnswer();
+*/

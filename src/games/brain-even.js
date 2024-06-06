@@ -1,3 +1,30 @@
+import questionAndAnswer from '../index.js';
+
+const descriptions = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+
+
+
+
+
+const generateQuestion = () => {
+    const randomNumber = Math.floor(Math.random() * 100);
+    const isEven = randomNumber % 2 === 0;
+    const correctAnswer = isEven ? 'yes' : 'no';
+    return [randomNumber, correctAnswer];
+};
+
+export default () => { questionAndAnswer(descriptions, generateQuestion); };
+
+
+
+
+
+
+
+
+
+/*
 import readlineSync from 'readline-sync';
 import greetUser from '../cli.js';
 
@@ -31,3 +58,4 @@ const playBrainEven = () => {
 playBrainEven ();
 
 export default playBrainEven;
+*/
