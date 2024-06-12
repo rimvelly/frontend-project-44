@@ -3,37 +3,34 @@ import questionAndAnswer from '../index.js';
 const operations = ['+', '-', '*'];
 const descriptions = 'What is the result of the expression?';
 
+export const calculate = (num1, operator, num2);
+switch (calculate) {
+  case '+':
+    console.log(num1 + num2);
+    break;
+  case '-':
+    console.log(num1 - num2);
+    break;
+  case '*':
+    console.log(num1 * num2);
+    break;
+  default:
+    console.log('NaN');
+}
+
 export const generateQuestion = () => {
-    const num1 = Math.floor(Math.random()*(100 - 1) + 1);
-    const num2 = Math.floor(Math.random()*(100 - 1) + 1);
-    const operation = operations[Math.floor(Math.random() * operations.length)];
-    const correctAnswer = calculate(num1, operation, num2).toString();
-    const question = `${num1} ${operation} ${num2}`;
-    return [ question, correctAnswer ];
+  const num1 = Math.floor(Math.random() * (100 - 1) + 1);
+  const num2 = Math.floor(Math.random() * (100 - 1) + 1);
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+  const correctAnswer = calculate(num1, operation, num2).toString();
+  const question = `${num1} ${operation} ${num2}`;
+  return [question, correctAnswer];
 };
-
-
-export const calculate = (num1, operator, num2) => 
-    operator === '+' ? num1 + num2 :
-    operator === '-' ? num1 - num2 :
-    operator === '*' ? num1 * num2 :
-    NaN;
-
 
 export default () => { questionAndAnswer(descriptions, generateQuestion); };
 
-
-
-
-
-
-
-
-
-
-
 /*
-export const playBrainCalc = () => { 
+export const playBrainCalc = () => {
     console.log('What is the result of the expression?');
 };
 
@@ -49,8 +46,7 @@ export const generateQuestion = () => {
     return [ question, correctAnswer ];
 };
 
-
-export const calculate = (num1, operator, num2) => 
+export const calculate = (num1, operator, num2) =>
     operator === '+' ? num1 + num2 :
     operator === '-' ? num1 - num2 :
     operator === '*' ? num1 * num2 :

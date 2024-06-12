@@ -2,5 +2,3 @@
 import playBrainCalc from "../src/games/brain-calc.js";
 
 playBrainCalc();
-
-//+
