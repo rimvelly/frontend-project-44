@@ -7,7 +7,7 @@ const generateQuestion = () => {
   const isEven = (randomNumber) => {
     randomNumber % 2 === 0;
   };
-  const correctAnswer = isEven ? 'yes' : 'no';
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
   return [randomNumber, correctAnswer];
 };
 
