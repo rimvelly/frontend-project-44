@@ -5,7 +5,7 @@ const descriptions = 'Answer "yes" if the number is even, otherwise answer "no".
 const generateQuestion = () => {
   const randomNumber = Math.floor(Math.random() * 100);
   const isEven = (number) => {
-    return number % 2;
+    return number % 2 === 0;
   };
   const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
   return [randomNumber, correctAnswer];
